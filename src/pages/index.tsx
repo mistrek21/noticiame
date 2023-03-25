@@ -54,7 +54,16 @@ const Home: NextPage = () => {
           </div>
         </header>
 
-        <div className="grid grid-cols-12">{/* Main Screen  */}</div>
+        {/* Main Screen  */}
+        <section className="grid h-full w-full grid-cols-12 place-items-center">
+          <main className="col-span-8 h-full w-full border-r border-gray-200">
+            this is the main section
+          </main>
+
+          <aside className="col-span-4 h-full w-full">
+            this is the sidebar
+          </aside>
+        </section>
       </div>
     </>
   );
