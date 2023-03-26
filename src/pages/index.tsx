@@ -7,6 +7,8 @@ import { api } from "~/utils/api";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { BsBell } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
+import { CiSearch } from "react-icons/ci";
+import { HiChevronDown } from "react-icons/hi";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -55,9 +57,54 @@ const Home: NextPage = () => {
         </header>
 
         {/* Main Screen  */}
-        <section className="grid h-full w-full grid-cols-12 place-items-center">
-          <main className="col-span-8 h-full w-full border-r border-gray-200">
-            this is the main section
+        <section className="grid h-full w-full grid-cols-12 place-items-center ">
+          <main className="col-span-8 h-full w-full space-y-4 border border-r border-gray-200 p-10">
+            <div className="space-y-8 ">
+              <div className="flex w-full flex-col ">
+                <div className="flex w-full items-center space-x-4">
+                  <label
+                    htmlFor="search"
+                    className="relative w-full rounded-lg border border-gray-900"
+                  >
+                    <div className="absolute right-2 flex h-full items-center">
+                      <CiSearch />
+                    </div>
+                    <input
+                      type="text"
+                      name="search"
+                      id="search"
+                      className="w-full rounded-lg py-2 px-4 pl-2 text-sm outline-none placeholder:text-gray-300"
+                      placeholder="Search..."
+                    />
+                  </label>
+
+                  <div className="flex w-full items-center justify-end space-x-4">
+                    <div>My topics</div>
+                    <div className="flex items-center space-x-2">
+                      {Array.from({ length: 4 }).map((_, i) => (
+                        <div
+                          key={i}
+                          className="rounded-3xl bg-gray-200/50 py-3 px-4"
+                        >
+                          tag {i}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex w-full items-center justify-between ">
+                <div>Articles</div>
+                <button className="flex items-center space-x-2 rounded-full border border-gray-800 p-5 py-2 font-semibold">
+                  <div>Following</div>
+                  <div>
+                    <HiChevronDown className="border-gray-300 text-xl" />
+                  </div>
+                </button>
+              </div>
+              <div className="border border-b border-gray-300 " />
+            </div>
           </main>
 
           <aside className="col-span-4 h-full w-full">
