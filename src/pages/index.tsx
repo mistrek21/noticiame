@@ -105,6 +105,59 @@ const Home: NextPage = () => {
               </div>
               <div className="border border-b border-gray-300 " />
             </div>
+            {/* Were we build all the articles */}
+            <section className="py-8">
+              <div className="flex w-full flex-col justify-center space-y-8">
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col space-y-8 border-b border-gray-300 border-t-transparent border-r-transparent border-l-transparent py-4 last:border-none"
+                  >
+                    <div className="">
+                      <div>Title</div>
+                      <div>Algo</div>
+                    </div>
+
+                    <div className="grid h-44 w-full grid-cols-12 gap-4">
+                      {/* Texto  */}
+                      <div className="col-span-8 flex flex-col space-y-4 ">
+                        <p className="text-3xl font-bold text-gray-800">
+                          Title
+                        </p>
+                        <p className=" break-words text-sm text-gray-300 ">
+                          TextttttttTextttttttTextttttttTextttttttTexttttttttttttmgsmfisfiposdfiojabyadiuosjdioaidJAPON
+                          clarokmskdmaklmdkalmk
+                          TextttttttTextttttttTextttttttTextttttttTextttttttTexttttttt
+                          TextttttttTextttttttTextttttttTextttttttTextttttttTextttttttTextttttttT
+                          extttttttTextttttttTextttttttTextttttttTextttttttTexttttttt
+                        </p>
+                      </div>
+                      {/* Image  */}
+                      <div className="col-span-4">
+                        <div className="h-full w-full transform rounded-xl bg-gray-500 transition duration-300 hover:scale-105 hover:shadow-lg"></div>
+                      </div>
+                    </div>
+
+                    {/* Tags  */}
+                    <div>
+                      <div className="flex w-full items-center justify-start space-x-4">
+                        <div>My topics</div>
+                        <div className="flex items-center space-x-2">
+                          {Array.from({ length: 4 }).map((_, i) => (
+                            <div
+                              key={i}
+                              className="rounded-3xl bg-gray-200/50 py-3 px-4"
+                            >
+                              tag {i}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
           </main>
 
           <aside className="col-span-4 h-full w-full">
