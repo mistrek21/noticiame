@@ -1,4 +1,4 @@
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import React from "react";
 import { BsBell } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
@@ -37,6 +37,9 @@ const MainLayout = ({ children }: React.PropsWithChildren) => {
                   <FiEdit className="text-2xl" />
                 </div>
               </button>
+            </div>
+            <div>
+              <button onClick={() => signOut()}>Log out</button>
             </div>
           </div>
         ) : (
