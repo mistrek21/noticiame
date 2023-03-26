@@ -26,13 +26,9 @@ const Home: NextPage = () => {
         <header className="flex h-24 w-full flex-row items-center justify-between border border-gray-200 bg-gray-100 ">
           <div className="ml-10 flex items-center space-x-4">
             <IoReorderThreeOutline className="text-2xl" />
-            <input
-              placeholder="busca algo"
-              className="w-96 rounded-full pl-2 outline-none first-letter:capitalize"
-            />
           </div>
 
-          <div className="mr-60 text-2xl font-bold">Meneame</div>
+          <div className="text-2xl font-bold">Meneame</div>
 
           <div className="mr-10 flex items-center space-x-2">
             <div>
