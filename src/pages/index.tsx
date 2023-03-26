@@ -21,9 +21,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex h-screen w-full flex-col">
+      <div className="flex h-full w-full flex-col">
         {/* Header  */}
-        <header className="flex h-20 w-full flex-row items-center justify-between border border-gray-200 bg-gray-100 ">
+        <header className="flex h-24 w-full flex-row items-center justify-between border border-gray-200 bg-gray-100 ">
           <div className="ml-10 flex items-center space-x-4">
             <IoReorderThreeOutline className="text-2xl" />
             <input
@@ -113,11 +113,6 @@ const Home: NextPage = () => {
                     key={i}
                     className="flex flex-col space-y-8 border-b border-gray-300 border-t-transparent border-r-transparent border-l-transparent py-4 last:border-none"
                   >
-                    <div className="">
-                      <div>Title</div>
-                      <div>Algo</div>
-                    </div>
-
                     <div className="grid h-44 w-full grid-cols-12 gap-4">
                       {/* Texto  */}
                       <div className="col-span-8 flex flex-col space-y-4 ">
@@ -160,8 +155,54 @@ const Home: NextPage = () => {
             </section>
           </main>
 
-          <aside className="col-span-4 h-full w-full">
-            this is the sidebar
+          {/* Side Bar */}
+          <aside className="sticky top-36 col-span-4 flex h-full w-full flex-col space-y-10 p-10">
+            <div className="space-y-3">
+              <h3 className="font-semibold">People</h3>
+              <div className="flex flex-col space-y-4"></div>
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="flex flex-row items-center justify-between space-x-4"
+                >
+                  <div className="flex items-center justify-center space-x-4">
+                    <div className="h-10 w-10 rounded-full bg-gray-500"></div>
+                    <div>
+                      <div className="text-xl font-bold text-gray-900">
+                        Name
+                      </div>
+                      <div className="text-xs">dklasldkalskd;laskld;kas;l</div>
+                    </div>
+                  </div>
+                  <div>
+                    <button className="flex items-center space-x-2 rounded border border-gray-200 px-4 py-2 transition hover:border-gray-900 hover:text-gray-900 ">
+                      Follow
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="space-y-4">
+              <h3 className="font-semibold">Reading</h3>
+              <div className="flex flex-col space-y-4">
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div key={i} className="group flex items-center space-x-6">
+                    <div className="aspect-square h-full w-2/5 rounded-xl bg-gray-300"></div>
+                    <div className="flex w-3/5 flex-col space-y-2 ">
+                      <div className="group-hover:underline">
+                        kdmalsmdklmaskdmklamskld
+                      </div>
+                      <div>dlkmaskdmklas</div>
+                      <div className="flex w-full items-center space-x-4 ">
+                        <div className="h-5 w-5 rounded-full bg-gray-300"></div>
+                        <div>Ramon</div>
+                        <div>13-2-2008</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </aside>
         </section>
       </div>
