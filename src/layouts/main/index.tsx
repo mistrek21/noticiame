@@ -1,12 +1,13 @@
 import { signIn, signOut, useSession } from "next-auth/react";
-import React from "react";
+import React, { useContext } from "react";
 import { BsBell } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { IoReorderThreeOutline } from "react-icons/io5";
+import { GlobalContext } from "~/context/GlobalContextProvider";
 
 const MainLayout = ({ children }: React.PropsWithChildren) => {
   const { data: sessionData, status } = useSession();
-
+  const { isWrittenModal, setIsWrittenModal } = useContext(GlobalContext);
   console.log(sessionData);
 
   return (
@@ -31,7 +32,10 @@ const MainLayout = ({ children }: React.PropsWithChildren) => {
             </div>
 
             <div>
-              <button className="flex items-center space-x-2 rounded border border-gray-200 px-4 py-2 transition hover:border-gray-900 hover:text-gray-900 ">
+              <button
+                onClick={() => setIsWrittenModal(true)}
+                className="flex items-center space-x-2 rounded border border-gray-200 px-4 py-2 transition hover:border-gray-900 hover:text-gray-900 "
+              >
                 <div>Write</div>
                 <div>
                   <FiEdit className="text-2xl" />

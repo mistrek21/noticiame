@@ -7,9 +7,14 @@ import { api } from "~/utils/api";
 import { CiSearch } from "react-icons/ci";
 import { HiChevronDown } from "react-icons/hi";
 import MainLayout from "~/layouts/main";
+import Modal from "~/components/Modal";
+import { useContext, useState } from "react";
+import { GlobalContext } from "~/context/GlobalContextProvider";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+
+  const { isWrittenModal, setIsWrittenModal } = useContext(GlobalContext);
 
   return (
     <>
@@ -170,6 +175,9 @@ const Home: NextPage = () => {
             </div>
           </aside>
         </section>
+        <Modal isOpen={isWrittenModal} onClose={() => setIsWrittenModal(false)}>
+          hello from the modal
+        </Modal>
       </MainLayout>
     </>
   );
