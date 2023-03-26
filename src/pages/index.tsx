@@ -57,7 +57,7 @@ const Home: NextPage = () => {
         </header>
 
         {/* Main Screen  */}
-        <section className="grid h-full w-full grid-cols-12 place-items-center ">
+        <section className="grid grid-cols-12">
           <main className="col-span-8 h-full w-full space-y-4 border border-r border-gray-200 p-10">
             <div className="space-y-8 ">
               <div className="flex w-full flex-col ">
@@ -108,7 +108,7 @@ const Home: NextPage = () => {
             {/* Were we build all the articles */}
             <section className="py-8">
               <div className="flex w-full flex-col justify-center space-y-8">
-                {Array.from({ length: 4 }).map((_, i) => (
+                {Array.from({ length: 8 }).map((_, i) => (
                   <div
                     key={i}
                     className="flex flex-col space-y-8 border-b border-gray-300 border-t-transparent border-r-transparent border-l-transparent py-4 last:border-none"
@@ -156,7 +156,7 @@ const Home: NextPage = () => {
           </main>
 
           {/* Side Bar */}
-          <aside className="sticky top-36 col-span-4 flex h-full w-full flex-col space-y-10 p-10">
+          <aside className="col-span-4 flex  flex-col space-y-10 p-10">
             <div className="space-y-3">
               <h3 className="font-semibold">People</h3>
               <div className="flex flex-col space-y-4"></div>
@@ -182,7 +182,7 @@ const Home: NextPage = () => {
                 </div>
               ))}
             </div>
-            <div className="space-y-4">
+            <div className="sticky top-24 space-y-4 pb-10 ">
               <h3 className="font-semibold">Reading</h3>
               <div className="flex flex-col space-y-4">
                 {Array.from({ length: 4 }).map((_, i) => (
